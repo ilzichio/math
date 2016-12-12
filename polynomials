@@ -1,0 +1,32 @@
+## some tricks in polynomial's multiplication
+
+~~ Suppose we want to multiply polynomial in the following form:
+(1+x)*(1+x^2)
+Well, we can do it by distrubutive property:
+We'll get : x^3+x^2+x+1
+But we can invent some kind of formula to multiply polynomial in form like this one:
+(1+x^2^0)*(1+x^2^1)*(1+x^2^2)*...*(1+x^2^n)
+After a few experiments, it turned out to this pattern:
+(1+x^2^0)*(1+x^2^1)*(1+x^2^2)*...*(1+x^2^n) = 1+x+x^2+...+x^(2^n+2^(n-1)+...+2^1+2^0)
+We can check this out by the following example:
+(1+x)*(1+x^2)*(1+x^4)*(1+x^8) = (1+x^(2^0))*(1+x^(2^1))*(1+x^(2^2))*(1+x^(2^3)) = 1+x+x^2+..+x^14+x^15
+And this example proves our guess.
+
+~~ It take me some time to came up with this trick :
+Suppose we want to take square of the polynomial like this one (1+x+x^2+...+x^n)^2
+Well, computing only powers of x's without coefficients is easy-enough and looks like multiplying in interval arithmetic
+We simply take the lowest term (in our case its 1) and the bigger term (in our case its x^n) and we should write down
+a sequence with all power of x's between 1 and x^2n (2n due to squaring) (and again, without coefficients at this point) :
+(1+x+x^2+...+x^n)^2 = 1+x+x^2+...+x^(2n-1)+x^2n
+And now the most hard part : we should somehow compute the coefficients:
+I came to the point where I have no idea that the fuck I am doing/writing:
+  coefficents follow the same pattern as power's of x's except that they'll start to reduce after reaching "middle point"
+  Wtf is middle point? well,its the upper term in out original equation, or x^n:
+  so after reaching this point, they would start to reducing by 1 (I have an abstract theory about that, but I'll simply 
+  would not be able to write this down, thought. 
+  1+2x+3x^2+...n+1*x^n (middle point)+n*x^(n+1)+..+2*x^(2n-1)+x^2n
+  As you can see, every coeffiecient on first part of the sequence is equal to (power of related x) + 1
+  
+
+  
+
