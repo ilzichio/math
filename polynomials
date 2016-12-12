@@ -12,10 +12,10 @@ We can check this out by the following example:
 (1+x)*(1+x^2)*(1+x^4)*(1+x^8) = (1+x^(2^0))*(1+x^(2^1))*(1+x^(2^2))*(1+x^(2^3)) = 1+x+x^2+..+x^14+x^15
 And this example proves our guess.
 
-~~ It take me some time to came up with this trick :
+~~ It took me some time to came up with this trick :
 Suppose we want to take square of the polynomial like this one (1+x+x^2+...+x^n)^2
-Well, computing only powers of x's without coefficients is easy-enough and looks like multiplying in interval arithmetic
-We simply take the lowest term (in our case its 1) and the bigger term (in our case its x^n) and we should write down
+Well, computing only powers of x's without coefficients is easy-enough and it looks like multiplying in interval arithmetic
+We simply should take the lowest term (in our case its 1) and the bigger term (in our case its x^n) and we should write down
 a sequence with all power of x's between 1 and x^2n (2n due to squaring) (and again, without coefficients at this point) :
 (1+x+x^2+...+x^n)^2 = 1+x+x^2+...+x^(2n-1)+x^2n
 And now the most hard part : we should somehow compute the coefficients:
