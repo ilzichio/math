@@ -1,4 +1,5 @@
-## some tricks in polynomial's multiplication
+## some tricks in polynomial's multiplication (all formulas in WolframAlpha format, so one could copypaste them and
+see the normal readable format
 
 ~~ Suppose we want to multiply polynomial in the following form:
 (1+x)*(1+x^2)
@@ -26,6 +27,13 @@ I came to the point where I have no idea that the fuck I am doing/writing:
   would not be able to write this down, thought. 
   1+2x+3x^2+...n+1*x^n (middle point)+n*x^(n+1)+..+2*x^(2n-1)+x^2n
   As you can see, every coeffiecient on first part of the sequence is equal to (power of related x) + 1
+
+### Some useful trics from practice ###
+$ x^n/x-a = x^(n-1)+ax^(n-2)+a^2x^(n-3)+...+a^(n-1)x^0+a^n/x-a
+$ x^n-1/(x-1) = 1+x+x^2+...+x^(n-1)
+$ x^n+1/(x-1) = 1+2/(x-1)+x+...+x^(n-1)
+$ x^n-2/(x-1) = 1+x+x^2...+x^(n-1)+1/(x-1)
+$ x^n-a/(x-a) = a^n-a/(x-a)+a^(n-1)x^0+...+ax^(n-2)+x^(n-1)
   
 
   
